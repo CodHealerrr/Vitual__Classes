@@ -197,14 +197,15 @@ const showInfo = (gObject) => {
 const removeGlasses = (isDisplay) => {
   let glasses = getELE("glasses");
 
-  if (glasses == null) {
-    return;
-  }
-  if (isDisplay) {
-    glasses.style.opacity = 0.9;
+  if (glasses != null) {
+    if (isDisplay) {
+      glasses.style.opacity = 0.9;
+    } else {
+      //isDisplay = false thì ẩn kính
+      glasses.style.opacity = 0;
+    }
   } else {
-    //isDisplay = false thì ẩn kính
-    glasses.style.opacity = 0;
+    window.alert("Click on glasses to see the changes");
   }
 };
 
